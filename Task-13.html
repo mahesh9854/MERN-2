@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task - 13</title>
+</head>
+<body>
+    <form>
+        <img id="myimg" src="train.png" />
+        <center>
+            <p style="color: blue; font-size: 32px;"><b>Click the following buttons to handle the animation</b></p>
+            <input type="button" value="Start" id="startButton" onclick="startMoving();" />
+            <input type="button" value="Stop" id="stopButton" onclick="stopMoving();" />
+        </center>
+    </form>
+    <script>
+        var img = null;
+        var movingInterval;
+        var windowWidth;
+
+        function init() {
+            img = document.getElementById('myimg');
+            img.style.position = 'relative';
+            img.style.left = '0px';
+            windowWidth = window.innerWidth;
+        }
+
+        function moveRight() {
+            var currentLeft = parseInt(img.style.left);
+            if (currentLeft < windowWidth - img.clientWidth) {
+                img.style.left = currentLeft + 5 + 'px';
+            } else {
+                img.style.left = '0px';
+            }
+        }
+
+        function startMoving() {
+            movingInterval = setInterval(moveRight, 100);
+        }
+
+        function stopMoving() {
+            clearInterval(movingInterval);
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
