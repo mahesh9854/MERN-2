@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task - 11</title>
+</head>
+<body>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <div class="name"></div>
+    <br>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email">
+    <div class="email"></div>
+    <br>
+    <label for="name">Website</label>
+    <input type="text" id="website" name="website">
+    <div class="website"></div>
+    <br>
+    <label for="message">Message:</label>
+    <textarea name="message" id="message"></textarea>
+    <div class="message"></div>
+    <br>
+    <button type="submit">Submit</button>
+    <script>
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const website = document.getElementById('website');
+        const message = document.getElementById('message');
+        const submit = document.querySelector('button');
+        const nameError = document.querySelector('.name');
+        const emailError = document.querySelector('.email');
+        const websiteError = document.querySelector('.website');
+        const messageError = document.querySelector('.message');
+        submit.addEventListener('click', (e) => {
+            e.preventDefault();
+            if(name.value === ''){
+                nameError.style.display = 'inline';
+                nameError.textContent = 'Name is required';
+                nameError.style.color = 'red';
+                name.style.border = '1px solid red';
+            }
+            if(email.value === ''){
+                emailError.style.display = 'inline';
+                emailError.textContent = 'Email is required';
+                emailError.style.color = 'red';
+                email.style.border = '1px solid red';
+            }
+            if(website.value === ''){
+                websiteError.style.display = 'inline';
+                websiteError.textContent = 'Website is required';
+                websiteError.style.color = 'red';
+                website.style.border = '1px solid red';
+            }
+            if(message.value === ''){
+                messageError.style.display = 'inline';
+                messageError.textContent = 'Message is required';
+                messageError.style.color = 'red';
+                message.style.border = '1px solid red';
+            }
+        })
+    </script>
+</body>
+</html>

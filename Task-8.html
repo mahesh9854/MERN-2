@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task - 8</title>
+</head>
+<body>
+    <script>
+        var element = document.createElement("h1")
+        element.innerHTML = "Task - 8"
+        document.body.appendChild(element)
+        var child = document.createElement("p")
+        child.innerHTML = "Open Console to view the result"
+        child.style.color = "red"
+        child.style.fontSize = "20px"
+        document.body.appendChild(child)
+        function sortAlphabetical(string) {
+            var arr = string.split("")
+            arr.sort()
+            var newString = arr.join("")
+            console.log(newString)
+        }
+        var string = "webmaster"
+        console.log("Original String: " + string)
+        sortAlphabetical(string)
+    </script>
+</body>
+</html>
