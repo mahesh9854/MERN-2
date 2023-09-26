@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task - 7</title>
+</head>
+<body>
+    <script>
+        var element = document.createElement("h1")
+        element.innerHTML = "Task - 7"
+        document.body.appendChild(element)
+        var child = document.createElement("p")
+        child.innerHTML = "Open Console to view the result"
+        child.style.color = "red"
+        child.style.fontSize = "20px"
+        document.body.appendChild(child)
+        function reverseNumber(num)
+        {
+            var x = num
+            var temp = x
+            var rev = 0
+            while(x)
+            {
+                var rem = x % 10
+                rev = rev * 10 + rem
+                x = parseInt(x / 10)
+            }
+            return rev
+        }
+        console.log("Original Number: ")
+        console.log(32243)
+        console.log("Reversed Number: ")
+        console.log(reverseNumber(32243))
+    </script>
+</body>
+</html>
